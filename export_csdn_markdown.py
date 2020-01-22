@@ -167,7 +167,7 @@ def CrawlingItemBlog(base_url, id):
             # 写入文件
             md_file_name = './_posts/' + year + '-' + month + '-' + day + '-' + file_name + '.markdown'
             f = codecs.open(md_file_name, 'w', encoding='utf-8')
-            jekyll_str = '---\n' + 'layout:  post\n' + jekyll_title + jekyll_date + 'author:  "唐传林"\nheader-img: "img/post-bg-2015.jpg"\ncatalog:   false\n' + jekyll_categories + jekyll_tags + '\n---\n'
+            jekyll_str = '---\n' + 'layout:  post\n' + jekyll_title + jekyll_date + '\nauthor:  "张耀文"\ncatalog:   false\n' + jekyll_categories + jekyll_tags + '\n---\n'
 
             f.write(jekyll_str)
             f.write(text_utf8_right)
@@ -175,7 +175,7 @@ def CrawlingItemBlog(base_url, id):
         except Exception:
             print(' 写入文件 ' + file_name + ' 出错. ')
 
-
+        return True
         # 若不爬取图片保存下来，则该CrawlingItemBlog子程序中以下这一小段到return True之前可以删除或者注释，可提高爬取博客的速度
         # 爬取每篇博客的图片保存下来是为了给博客做备份，万一哪天csdn挂了
 
